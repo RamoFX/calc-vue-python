@@ -1,0 +1,46 @@
+*
+  box-sizing: border-box
+  font:
+    family: "Ubuntu", sans-serif
+    size: 16px
+    weight: $weight-regular
+
+html
+  min-height: 100vh
+
+  body, #wrapper
+    min-height: inherit
+
+  body
+    margin: 0
+
+    noscript
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+
+    ul
+      margin: 0
+      padding: 0
+
+      li
+        list-style: none
+        text-transform: capitalize
+
+    .button,
+    nav, .nav
+      user-select: none
+
+    .main
+      &, .main-container
+        & > *:not(:nth-last-child(1))
+          margin-bottom: 2rem
+
+      .main-container
+        width: 100%
+
+    p
+      padding: 0
+      margin: 0
+      font-weight: $weight-light

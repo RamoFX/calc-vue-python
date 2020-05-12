@@ -1,0 +1,8 @@
+@function getColor($hsl, $level)
+  @return hsl( nth($hsl, 1), nth($hsl, 2), nth($hsl, 3) + 5.5 * $level )
+
+@function hsl_map($hsl_map)
+  $h: nth($hsl_map, 1)
+  $s: nth($hsl_map, 2)
+  $l: nth($hsl_map, 3)
+  @return hsl($h, $s, $l)

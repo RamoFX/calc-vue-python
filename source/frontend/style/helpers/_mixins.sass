@@ -1,0 +1,51 @@
+=transition($easing: quart, $speed: fast)
+  @if $easing == quart
+    $easing: $quart
+
+  @else if $easing == ease
+    $easing: $ease
+
+  @if $speed == fast
+    $speed: 75
+
+  @else if $speed == normal
+    $speed: 150
+
+  @else if $speed == slow
+    $speed: 250
+
+  transition: #{$speed}ms $easing
+
+=shadow($x, $y, $blur, $color)
+  box-shadow: $x $y $blur $color
+
+=shadow-def
+  +shadow( 0, 0, 2rem, rgba(0,0,0,.25) )
+
+=shadow-0
+  +shadow( 0, 2rem, 4rem, rgba(0,0,0,.25) )
+
+=shadow-1
+  +shadow( 0, 1rem, 2rem, rgba(0,0,0,.25) )
+
+=shadow-2
+  +shadow( 0, .5rem, 1rem, rgba(0,0,0,.25) )
+
+=shadow-3
+  +shadow( 0, .25rem, .5rem, rgba(0,0,0,.25) )
+
+=clickable($property, $color, $step, $mode)
+  cursor: pointer
+  #{$property}: $color
+
+  @if $mode == darken
+    &:hover
+      #{$property}: darken($color, $step)
+    &:active
+      #{$property}: darken($color, $step*2)
+
+  @else if $mode == lighten
+    &:hover
+      #{$property}: lighten($color, $step)
+    &:active
+      #{$property}: lighten($color, $step*2)

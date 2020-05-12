@@ -1,0 +1,9 @@
+@each $color in $colors
+
+  @for $level from -3 through 3
+
+    .color-#{ nth($color, 2) }#{ $level }
+      color: getColor( nth($color, 1), $level )
+
+    .bg-#{ nth($color, 2) }#{ $level }
+      background-color: getColor( nth($color, 1), $level )

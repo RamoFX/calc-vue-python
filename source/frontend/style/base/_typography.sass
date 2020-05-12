@@ -1,0 +1,20 @@
+@each $value in $headings
+  $i: index($headings, $value)
+
+  h#{$i}, .h#{$i}
+    margin: 0
+    padding: 0
+    font-size: map-get($value, 'font-size')
+    line-height: map-get($value, 'font-size') + .25rem
+
+    @if $i == 1
+      letter-spacing: 0.0625rem
+
+    @if $i == 6
+      opacity: 0.75
+
+    @if map-get($value, 'font-weight') != null
+      font-weight: map-get($value, 'font-weight')
+
+    @else
+      font-weight: $weight-regular
