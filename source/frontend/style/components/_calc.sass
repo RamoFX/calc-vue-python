@@ -1,5 +1,8 @@
 .calc
   background-color: white
+  max-width: 16rem
+  position: relative
+  +shadow-1
 
   input
     border: none
@@ -7,6 +10,8 @@
     text-align: right
     padding: 2.5rem 1rem
     outline: none
+    font-size: 20px
+    box-sizing: border-box
 
   .calc-buttons
 
@@ -19,19 +24,33 @@
       height: 4rem
       text-align: center
       line-height: 4rem
+      color: white
+      font-weight: 500
+      font-size: 18px
+
+      &:hover
+        background-color: rgba(white,.1)
+
+      &:active
+        background-color: rgba(white,.2)
 
     [class^=calc-buttons-]
       max-width: 16rem
       flex-wrap: wrap
 
     .calc-buttons-operators
+      background-color: desaturate(getColor($s-a, -4), 25%)
+
       .calc-button-operator
-        //
 
-    .calc-buttons-numbers
-      .calc-button-number
-        //
+    .calc-container-numbers-controls
+      max-width: 16rem
+      .calc-buttons-numbers
+        background-color: hsl-map($n-d)
 
-    .calc-buttons-controls
-      .calc-button-control
-        //
+        .calc-button-number
+
+      .calc-buttons-controls
+        background-color: desaturate(getColor($s-a, -2), 25%)
+
+        .calc-button-control
