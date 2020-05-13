@@ -1,6 +1,6 @@
 .calc
   background-color: white
-  max-width: 16rem
+  width: 16rem
   position: relative
   +shadow-1
 
@@ -35,7 +35,7 @@
         background-color: rgba(white,.2)
 
     [class^=calc-buttons-]
-      max-width: 16rem
+      width: 16rem
       flex-wrap: wrap
 
     .calc-buttons-operators
@@ -44,13 +44,16 @@
       .calc-button-operator
 
     .calc-container-numbers-controls
-      max-width: 16rem
+
       .calc-buttons-numbers
+        width: 12rem
         background-color: hsl-map($n-d)
+        flex-wrap: wrap-reverse
 
         .calc-button-number
 
       .calc-buttons-controls
+        width: 4rem
         background-color: desaturate(getColor($s-a, -2), 25%)
 
         .calc-button-control
