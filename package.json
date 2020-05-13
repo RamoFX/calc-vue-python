@@ -1,17 +1,15 @@
 {
-  "name": "app-gulp-vue",
+  "name": "calc-vue-python",
   "author": "RamoFX",
   "version": "1.0.0",
   "description": "Calculator application: typescript, vue, sass, python.",
   "license": "ISC",
   "keywords": [
     "python",
-    "backend",
     "desktop",
     "typescript",
     "sass",
     "vuejs2",
-    "frontend",
     "gulpfile",
     "calculator"
   ],
