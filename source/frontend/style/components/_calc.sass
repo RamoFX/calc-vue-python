@@ -4,6 +4,9 @@
   position: relative
   +shadow-1
 
+  *:not(input)
+    user-select: none
+
   input
     border: none
     width: 100%
@@ -13,35 +16,42 @@
     font-size: 20px
     box-sizing: border-box
 
-  .calc-buttons
+  .calc-container
+    .calc-buttons-controls
+      span
+        &:hover
+          background-color: rgba(hsl-map($n-d),.2)
 
-    *
-      user-select: none
+        &:active
+          background-color: rgba(hsl-map($n-d),.4)
 
-    [class^=calc-button-]
-      cursor: pointer
-      width: 4rem
-      height: 4rem
-      text-align: center
-      line-height: 4rem
-      color: white
-      font-weight: 500
-      font-size: 18px
+    *:not(.calc-buttons-controls > span)
+      span
+        cursor: pointer
+        width: 4rem
+        height: 4rem
+        text-align: center
+        line-height: 4rem
+        color: white
+        font-weight: 500
+        font-size: 18px
+        +transition(ease, fast)
 
-      &:hover
-        background-color: rgba(white,.1)
+        &:hover
+          background-color: rgba(white,.1)
 
-      &:active
-        background-color: rgba(white,.2)
+        &:active
+          background-color: rgba(white,.2)
 
     [class^=calc-buttons-]
       width: 16rem
       flex-wrap: wrap
 
-    .calc-buttons-operators
-      background-color: desaturate(getColor($s-a, -4), 25%)
+    .calc-buttons-operators-advanced
+      background-color: desaturate(getColor($s-a, -5), 25%)
 
-      .calc-button-operator
+    .calc-buttons-operators-basic
+      background-color: desaturate(getColor($s-a, -4), 25%)
 
     .calc-container-numbers-controls
 
@@ -50,10 +60,6 @@
         background-color: hsl-map($n-d)
         flex-wrap: wrap-reverse
 
-        .calc-button-number
-
       .calc-buttons-controls
         width: 4rem
-        background-color: desaturate(getColor($s-a, -2), 25%)
-
-        .calc-button-control
+        background-color: desaturate(getColor($s-c, -3), 25%)
