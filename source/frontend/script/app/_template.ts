@@ -1,5 +1,5 @@
 const template = `
-  <div id="wrapper">
+  <div id="wrapper" jc="c" ai="c">
 
     <comp-calc />
 
