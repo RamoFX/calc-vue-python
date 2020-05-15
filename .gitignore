@@ -1,6 +1,6 @@
 .git
 node_modules
 production
-package-lock.json
 *.tmp
 test.*
+__pycache__
